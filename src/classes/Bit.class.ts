@@ -25,19 +25,40 @@ export class Bit implements IBit{
     };
 
     and<Bit>(otherBit: Bit){
-        const other = otherBit.getValue()
-        const temp = this.#value
-        
         let result = new Bit()
-        if(!temp) temp
-        if(!other) other
+
+        const temp = this.#value
+        const other = otherBit.getValue()
+
+        if(!temp) result.clearBit()
+        if(!other) result.clearBit()
 
         return result.setBit()
     };
 
-    // and( bit: Bit ){
-    //     let newBit: Bit
-    //     return newBit
-    // }
+    or<Bit>(otherBit: Bit){
+        let result = new Bit()
 
+        const temp = this.#value
+        const other = otherBit.getValue()
+
+        if(!temp){
+            if(!other) result.clearBit()
+        }
+        return result.setBit()
+    };
+
+    xor<Bit>(otherBit: Bit){
+        let result = new Bit()
+
+        const temp = this.#value
+        const other = otherBit.getValue()
+
+        if(temp === other) return result.clearBit()
+        return result.setBit()
+    };
+
+    not(){
+        return new Bit().toggle()
+    };
 }
