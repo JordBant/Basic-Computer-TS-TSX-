@@ -31,9 +31,17 @@ const App: FC = () => {
   return (
     <div className="App">
       {/* One Bit */}
-      <h1 className="bit-display">
-        { handleBitUI() }
-      </h1>
+      <div className="bit-display-wrapper">
+        <h1 className="bit-display">
+          { handleBitUI() }
+        </h1>
+        <ul className="bit-ops">
+          <li>add</li>
+          <li>or</li>
+          <li>not</li>
+          <li>xor</li>
+        </ul>
+      </div>
     </div>
   )
 }

@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  border: 2px solid red;
 }
 
 .logo {
@@ -15,6 +14,18 @@
 
 .bit-display{
   font-size: 5rem;
+  border: 2px solid red;
+}
+
+.bit-display-wrapper{
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bit-ops{
+  font-size: 2rem;
 }
 
 .card {
