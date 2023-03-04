@@ -5,11 +5,11 @@ export class Bit implements IBit{
     constructor(){}
     
     set(value: boolean){ 
-        return this.#value = value 
+        this.#value = value 
     };
 
     toggle(){
-        return !this.#value
+        !this.#value
     };
     
     setBit(){
@@ -24,41 +24,51 @@ export class Bit implements IBit{
         return this.#value
     };
 
-    // and<Bit>(otherBit: Bit){
-    //     let result = new Bit()
+    and(otherBit: Bit): Bit{
+        let result = new Bit()
 
-    //     const temp = this.#value
-    //     const other = otherBit.getValue()
+        const temp = this.#value
+        const other = otherBit.getValue()
 
-    //     if(!temp) result.clearBit()
-    //     if(!other) result.clearBit()
+        if(temp === false) result.clearBit()
+        if(other === false) {
+            result.clearBit()
+        } else {
+            result.setBit()
+        }
+        return result
+    };
 
-    //     return result.setBit()
-    // };
+    or(otherBit: Bit): Bit{
+        let result = new Bit()
 
-    // or<Bit>(otherBit: Bit){
-    //     let result = new Bit()
+        const temp = this.#value
+        const other = otherBit.getValue()
 
-    //     const temp = this.#value
-    //     const other = otherBit.getValue()
+        if(temp === false){
+            if(other === false) result.clearBit()
+        } else {
+            result.setBit()
+        }
+        return result
+    };
 
-    //     if(!temp){
-    //         if(!other) result.clearBit()
-    //     }
-    //     return result.setBit()
-    // };
+    xor(otherBit: Bit): Bit{
+        let result = new Bit()
 
-    // xor<Bit>(otherBit: Bit){
-    //     let result = new Bit()
+        const temp = this.#value
+        const other = otherBit.getValue()
 
-    //     const temp = this.#value
-    //     const other = otherBit.getValue()
+        temp === other 
+        ? result.clearBit() 
+        : result.setBit()
 
-    //     if(temp === other) return result.clearBit()
-    //     return result.setBit()
-    // };
+        return result
+    };
 
-    // not(){
-    //     return new Bit().toggle()
-    // };
+    not(){
+        let result = new Bit()
+        result.toggle()
+        return result
+    };
 }

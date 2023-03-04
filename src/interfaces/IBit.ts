@@ -6,11 +6,11 @@ export interface IBit{
     setBit: ()  => void
     clearBit: ()  => void
     getValue: () => boolean
-    and?: <Bit>(otherBit: Bit) => Bit
-    or?: <Bit>(otherBit: Bit) => Bit
-    xor?: <Bit>(otherBit: Bit) => Bit
-    not?: () => Bit
-    toString?: () => string
+    and: (otherBit: Bit) => Bit
+    or: (otherBit: Bit) => Bit
+    xor: (otherBit: Bit) => Bit
+    not: () => Bit
+    toString: () => string
 }
 
 // public interface IBit {
