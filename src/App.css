@@ -13,6 +13,10 @@
   transition: filter 300ms;
 }
 
+.bit-display{
+  font-size: 5rem;
+}
+
 .card {
   padding: 2em;
 }

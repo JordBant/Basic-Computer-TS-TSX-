@@ -5,7 +5,7 @@ export class Bit implements IBit{
     constructor(){}
     
     set(value: boolean){ 
-        this.#value = value 
+        return this.#value = value 
     };
 
     toggle(){
@@ -24,41 +24,41 @@ export class Bit implements IBit{
         return this.#value
     };
 
-    and<Bit>(otherBit: Bit){
-        let result = new Bit()
+    // and<Bit>(otherBit: Bit){
+    //     let result = new Bit()
 
-        const temp = this.#value
-        const other = otherBit.getValue()
+    //     const temp = this.#value
+    //     const other = otherBit.getValue()
 
-        if(!temp) result.clearBit()
-        if(!other) result.clearBit()
+    //     if(!temp) result.clearBit()
+    //     if(!other) result.clearBit()
 
-        return result.setBit()
-    };
+    //     return result.setBit()
+    // };
 
-    or<Bit>(otherBit: Bit){
-        let result = new Bit()
+    // or<Bit>(otherBit: Bit){
+    //     let result = new Bit()
 
-        const temp = this.#value
-        const other = otherBit.getValue()
+    //     const temp = this.#value
+    //     const other = otherBit.getValue()
 
-        if(!temp){
-            if(!other) result.clearBit()
-        }
-        return result.setBit()
-    };
+    //     if(!temp){
+    //         if(!other) result.clearBit()
+    //     }
+    //     return result.setBit()
+    // };
 
-    xor<Bit>(otherBit: Bit){
-        let result = new Bit()
+    // xor<Bit>(otherBit: Bit){
+    //     let result = new Bit()
 
-        const temp = this.#value
-        const other = otherBit.getValue()
+    //     const temp = this.#value
+    //     const other = otherBit.getValue()
 
-        if(temp === other) return result.clearBit()
-        return result.setBit()
-    };
+    //     if(temp === other) return result.clearBit()
+    //     return result.setBit()
+    // };
 
-    not(){
-        return new Bit().toggle()
-    };
+    // not(){
+    //     return new Bit().toggle()
+    // };
 }
