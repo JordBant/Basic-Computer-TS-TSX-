@@ -1,6 +1,8 @@
 import { FC, useState, useCallback } from 'react'
-import './App.css'
 import { Bit } from './classes/Bit.class'
+import BitwiseOpButton from './components/BitwiseOpButton'
+import BitwiseOps from './components/BitwiseOps'
+import './styles/App.scss'
 
 const App: FC = () => {
   const bit = new Bit()
@@ -35,12 +37,8 @@ const App: FC = () => {
         <h1 className="bit-display">
           { handleBitUI() }
         </h1>
-        <ul className="bitwise-ops">
-          <li>add</li>
-          <li>or</li>
-          <li>not</li>
-          <li>xor</li>
-        </ul>
+        
+        <BitwiseOps/>
       </div>
     </div>
   )
