@@ -1,5 +1,5 @@
 import { ILongword } from "../interfaces/ILongword";
 
-export class Longword implements ILongword{
+export class Longword{
     constructor(){}
 }

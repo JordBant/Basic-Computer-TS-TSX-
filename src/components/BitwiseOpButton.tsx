@@ -1,28 +1,37 @@
-import {useCallback} from 'react'
+import {useCallback, FC} from 'react'
 import { Bit } from '../classes/Bit.class'
 
 type BitwiseOpButtonProps = {
-  icon: string;
+  icon: "XOR" | "||" | "&&" | "!!";
   bitwiseOp: () => {};
 
 }
 
-const BitwiseOpButton = (props: BitwiseOpButtonProps) => {
-    const performBitwiseOp = useCallback(
-      (other: Bit) => {
-        return other
+const BitwiseOpButton: FC<BitwiseOpButtonProps> = ({bitwiseOp, icon}) => {
+    const triggerByteInput = useCallback(() => {
+        
       },
       [],
     )
     
   return (
     <>
-      <button className="bitwise-op-btn">
-        {props.icon}
+      <button 
+        className="bitwise-op-btn"
+        onClick={triggerByteInput}
+      >
+        {icon}  {/* Temporary Icon */}
       </button>
 
       {/* Any number entered will be converted to a byte */}
-      <input type="number" name="bit" />
+      <div className="input-wrapper">
+        <input type="number" name="bit" />
+        <button
+          onClick={bitwiseOp}
+        >
+          Submit
+        </button>
+      </div>
     </>
   )
 }
