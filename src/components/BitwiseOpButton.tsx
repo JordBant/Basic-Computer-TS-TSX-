@@ -4,7 +4,6 @@ import { Bit } from '../classes/Bit.class'
 type BitwiseOpButtonProps = {
   icon: "XOR" | "||" | "&&" | "!!";
   bitwiseOp: () => {};
-
 }
 
 const BitwiseOpButton: FC<BitwiseOpButtonProps> = ({bitwiseOp, icon}) => {
