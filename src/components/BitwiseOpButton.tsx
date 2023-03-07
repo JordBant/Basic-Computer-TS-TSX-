@@ -23,6 +23,7 @@ const BitwiseOpButton: FC<BitwiseOpButtonProps> = ({bitwiseOp, icon}) => {
       </button>
 
       {/* Any number entered will be converted to a byte */}
+      
       <div className="input-wrapper">
         <input type="number" name="bit" />
         <button
