@@ -37,7 +37,6 @@ const App: FC = () => {
         <h1 className="bit-display">
           { handleBitUI() }
         </h1>
-        
         <BitwiseOps/>
       </div>
     </div>

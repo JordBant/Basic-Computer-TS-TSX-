@@ -1,8 +1,28 @@
-import React from 'react'
+import { useState, Dispatch, FC } from 'react'
+import { Bit } from '../classes/Bit.class';
 
-type Props = {}
+type BitwiseOpsListProps = {
+    thisBit: Bit //Bit in UI
+}
 
-const BitwiseOps = (props: Props) => {
+type BitwiseOpButtonProps = {
+    clickedStateSetter: <Dispatch>() => void;
+    clicked: string
+    icon: "&&" | "||" | "!!" | "XOR";
+}
+
+const BitwiseOps: FC<BitwiseOpsListProps> = ({thisBit}) => {
+    const [opClicked, setOpClicked] = useState<null | string>(null);
+
+    /**
+     * 
+     * Button clicked will pass its value back up to state. Depending on state,
+     * this parent will trigger UI of clicked button
+     * Input can either already exist (Impact to perform),
+     * or can be conditionally rendered (More CSS for working around animation of an )
+     *
+     */
+
   return (
     <ul className="bitwise-ops">
         <li>
